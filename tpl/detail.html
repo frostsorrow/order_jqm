@@ -1,0 +1,35 @@
+<div id="detailPage" data-role="page" ng-controller="detailCtrl">
+    <div data-role="header" data-position="fixed" >
+        <h1><a href="../../index.html" data-transition="slide">开饭啦</a></h1>
+        <a href="#" data-rel="back" class="ui-btn-icon-notext ui-btn ui-icon-back ui-corner-all"></a>
+    </div>
+    <div class="ui-content">
+        <div class="ui-corner-all custom-corners">
+            <div class="ui-bar ui-bar-a">
+                <h3><a href="#">首页</a> / 详情</h3>
+            </div>
+            <div class="ui-body ui-body-a">
+                <h1>{{dish.name}}</h1>
+                <div class="wrap">
+                    <img src="../img/{{dish.img_lg}}" alt="">
+                    <div>
+                        <h4 class="fontNormal"><strong>主要原料：</strong>{{dish.material}}</h4>
+                        <p>{{dish.detail}}</p>
+                        <span class="priceColor">{{dish.price|currency:'￥'}}</span>
+                        <a href="reserve.html?did={{dish.did}}" class="ui-btn ui-corner-all">我要订餐</a>
+                        <a href="#" class="ui-btn ui-corner-all">我再看看</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-bottom"></a></li>
+                <li><a href="userOrder.html" class="ui-btn ui-icon-user ui-btn-icon-bottom"></a></li>
+                <li><a href="#" class="ui-btn ui-icon-bullets ui-btn-icon-bottom"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

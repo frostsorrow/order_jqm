@@ -1,0 +1,37 @@
+<div data-role="page" id="menuPage" ng-controller="menuCtrl">
+    <div data-role="header" data-position="fixed" >
+        <h1><a href="#" data-transition="slide">开饭啦</a></h1>
+        <a href="#" data-rel="back" class="ui-btn-icon-notext ui-btn ui-icon-back ui-corner-all"></a>
+    </div>
+    <!--正文-->
+    <div class="ui-content" >
+        <form >
+            <input type="search" placeholder="搜索菜品名称和原料..." ng-model="kw">
+        </form>
+        <ul data-role="listview" data-inset="true">
+            <li ng-click="jump('detail.html?did={{dish.did}}')" ng-repeat="dish in dishlist">
+                <img src="../img/{{dish.img_sm}}" alt="" class="thumb-img">
+                <div class="intro">
+                    <h1>{{dish.name}}</h1>
+                    <p>主要食料：{{dish.material}}</p>
+                    <span>{{dish.price|currency:'￥'}}</span>
+                </div>
+            </li>
+        </ul>
+        <button class="ui-btn ui-corner-all ui-mini" data-inset="true" ng-click="loadMore()" ng-show="hasMore"  ng-disabled="loading">
+            <span ng-hide="loading">加载更多 </span>
+            <span ng-show="loading">加载中... </span>
+        </button>
+        <div class="alert alert-danger " data-inset="true" ng-hide="hasMore">没有更多数据了</div>
+    </div>
+    <!--页脚-->
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-bottom"></a></li>
+                <li><a href="userOrder.html" class="ui-btn ui-icon-user ui-btn-icon-bottom"></a></li>
+                <li><a href="#" class="ui-btn ui-icon-bullets ui-btn-icon-bottom"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

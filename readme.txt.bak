@@ -1,0 +1,2 @@
+order_jqm
+手机订餐应用app，单页面，用的是jqm及angular，在上一个项目order-angular中利用angular route做页面切换，这里利用jqm做的页面切换，jqm不需要手动写动画效果

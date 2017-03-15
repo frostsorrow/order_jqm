@@ -1,0 +1,39 @@
+<div data-role="page" id="userOrderPage" ng-controller="userOrderCtrl">
+    <div data-role="header" data-position="fixed" >
+        <h1><a href="#" data-transition="slide">开饭啦{{a}}</a></h1>
+        <a href="#" data-rel="back" class="ui-btn-icon-notext ui-btn ui-icon-back ui-corner-all"></a>
+    </div>
+    <!--正文-->
+    <div class="ui-content" >
+        <h1 class="title">我的订单</h1>
+        <table data-role="table" class="ui-responsive table-stroke table-bordered table-stripe" data-mode="columntoggle">
+            <thead>
+            <tr>
+                <th>编号</th>
+                <th>菜品</th>
+                <th data-priority="4">下单时间</th>
+                <th>联系人</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr ng-repeat="order in orders">
+                <td>{{order.oid}}</td>
+                <td><img src="../img/{{order.img_sm}}" alt=""></td>
+                <td>{{order.order_time|date:'yyyy-MM-dd hh:mm:ss'}}</td>
+                <!--注意区分大小写，月要用大写M-->
+                <td>{{order.user_name}}</td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+    <!--页脚-->
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-bottom"></a></li>
+                <li><a href="#" class="ui-btn ui-icon-user ui-btn-icon-bottom"></a></li>
+                <li><a href="#" class="ui-btn ui-icon-bullets ui-btn-icon-bottom"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>

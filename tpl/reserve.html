@@ -1,0 +1,39 @@
+<div data-role="page" id="reservePage" ng-controller="reserveCtrl">
+    <div data-role="header" data-position="fixed" >
+        <h1><a href="#" data-transition="slide">开饭啦{{a}}</a></h1>
+        <a href="#" data-rel="back" class="ui-btn-icon-notext ui-btn ui-icon-back ui-corner-all"></a>
+    </div>
+    <!--正文-->
+    <div class="ui-content" >
+        <div class="ui-body ui-body-a">
+            <form ng-hide="orderSuccess">
+                <label for="contact">联系人：</label>
+                <input type="text" id="contact" ng-model="user.user_name">
+                <fieldset data-role="controlgroup">
+                    <legend>性别：</legend>
+                    <input type="radio" value="male" id="male" name="gender"  ng-model="user.sex">
+                    <label for="male" >男</label>
+                    <input type="radio" value="male" id="female" name="gender"  ng-model="user.sex">
+                    <label for="female">女</label>
+                </fieldset>
+                <label for="tel">联系电话：</label>
+                <!--这里必须要填数字，否则会报错，因为sql定义这个数据为数字类型！！！！-->
+                <input type="text" id="tel"  ng-model="user.phone">
+                <label for="loc">送餐地址：</label>
+                <textarea name="loc" id="loc" cols="30" rows="10"  ng-model="user.addr"></textarea>
+                <input type="button" class="ui-mini" data-role="button" value="我要下单" ng-click="submitOrder()">
+            </form>
+            <div ng-if="orderSuccess" class="alert alert-success">订餐成功！您的订单编号为：{{oid}}。您可以在用户中心查看订单状态。</div>
+        </div>
+    </div>
+    <!--页脚-->
+    <div data-role="footer" data-position="fixed">
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn ui-icon-home ui-btn-icon-bottom"></a></li>
+                <li><a href="userOrder.html" class="ui-btn ui-icon-user ui-btn-icon-bottom"></a></li>
+                <li><a href="#" class="ui-btn ui-icon-bullets ui-btn-icon-bottom"></a></li>
+            </ul>
+        </div>
+    </div>
+</div>
